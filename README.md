@@ -5,7 +5,7 @@ I'm schniggie.
 <p align='center'>Reach out to me on <a href="https://twitter.com/schniggie">Twitter</a>.</p>
 <p align="center">
   <a href="https://twitter.com/schniggie">
-    <img src="https://img.shields.io/twitter/follow/schniggie?style=for-the-badge&label=schniggiej&logo=twitter&logoColor=00AEFF&labelColor=black&color=7fff00">  </a>
+    <img src="https://img.shields.io/twitter/follow/schniggie?style=for-the-badge&label=schniggie&logo=twitter&logoColor=00AEFF&labelColor=black&color=7fff00">  </a>
 
 <h1 align='center'><i>Stay awesome!</i></h1>
 
