@@ -10,7 +10,7 @@
 
 <h2 align="left">👨🏻‍💻 About Me:</h2>
 
-- :computer: I'm currently working at [MBTI](https://git.daimler.com/mbti) as Lead Expert Offensive Security
+- :computer: I'm currently working at [MBTI](https://www.mercedes-benz-techinnovation.com/) as Lead Expert Offensive Security
 - :hourglass_flowing_sand:  Exploring 0.0.0.0/0
 - :rocket: Always ready to collaborate for some hacking experiments :)
 - :man_technologist: Former security consultant
