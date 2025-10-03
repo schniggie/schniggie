@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Default values
+VERBOSE=false
+PERSONA="You are a helpful assistant"
+MODEL="claude-4-opus"
+API_URL="ch.at/v1/chat/completions"
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -v)
+            VERBOSE=true
+            shift
+            ;;
+        -p)
+            PERSONA="$2"
+            shift 2
+            ;;
+        -m)
+            MODEL="$2"
+            shift 2
+            ;;
+        *)
+            # This is the prompt
+            PROMPT="$1"
+            shift
+            ;;
+    esac
+done
+
+# Check if prompt is provided
+if [[ -z "$PROMPT" ]]; then
+    echo "Usage: ai [-v] [-p persona] [-m model] 'your prompt'"
+    echo "Example: ai -p 'expert in math' -m gpt-5 'Help me create a short mail about xyz'"
+    exit 1
+fi
+
+# Make the API call
+RESPONSE=$(curl -s "$API_URL" \
+    --data "{
+        \"model\": \"$MODEL\",
+        \"messages\": [
+            {\"role\": \"system\", \"content\": \"$PERSONA\"},
+            {\"role\": \"user\", \"content\": \"$PROMPT\"}
+        ]
+    }")
+
+# Output based on verbose flag
+if [[ "$VERBOSE" == true ]]; then
+    # Pretty print the full JSON response
+    echo "$RESPONSE" | jq .
+else
+    # Extract only the content from the response
+    echo "$RESPONSE" | jq -r '.choices[0].message.content'
+fi
